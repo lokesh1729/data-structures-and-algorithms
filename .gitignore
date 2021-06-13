@@ -190,4 +190,6 @@ Thumbs.db
 .prof
 
 tags
+codeforces/input.txt
+codeforces/output.txt
 # End of https://www.toptal.com/developers/gitignore/api/c++,python
