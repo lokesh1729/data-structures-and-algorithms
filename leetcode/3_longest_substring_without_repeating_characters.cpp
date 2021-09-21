@@ -2,7 +2,25 @@ class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
         // return solution_one(s);
-        return my_solution(s);
+        // return my_solution(s);
+        return editorial_solution(s);
+    }
+
+    int editorial_solution(string s) {
+        int n = s.size();
+        set<char> m;
+        int l=0, r=0, res=0;
+        while(r < n) {
+            if (m.find(s[r]) != m.end()) {
+                m.erase(s[l]);
+                l++;
+            } else {
+                res = max(res, r-l+1);
+                m.insert(s[r]);
+                r++;
+            }
+        }
+        return res;
     }
 
     int my_solution(string s) {
